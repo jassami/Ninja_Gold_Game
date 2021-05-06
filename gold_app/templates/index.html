@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ninja Gold Game</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    </head> 
+    <body>
+        <div class="container">
+            <h1>Welcome to Ninja Gold Game!</h1>
+            <img src="{% static 'image/ninja.png' %}" alt="">
+            <h2>Enter the your winning terms: </h2>
+            <form action="/process" method="POST">
+                {% csrf_token %}
+                <label style="margin: 60px;" for="goldnum">Winning gold goal:</label>
+                <input class="num" type="number" style="margin: 20px;" name="goldnum"><br>
+                <label style="margin: 60px;" for="movenum">Number of moves:</label>
+                <input class="num" type="number" style="margin: 20px;" name="movenum">
+                <input type="submit" id='button' value="Strat Game!">
+            </form>
+        </div>
+    </body>
+</html>
